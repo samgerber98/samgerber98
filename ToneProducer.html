@@ -1,0 +1,121 @@
+<html>
+
+<head>
+	<title>Just Doing My Best :)</title>
+	<style>
+
+		body {
+  			padding: 0px;
+		}
+		.demo > div {
+  			float: left;
+  			width: 200px;
+  			height: 100px;
+  			opacity: 0.78;
+  			background-size: cover;
+  			border: 1px solid black;
+		}
+		.demo {
+  			width: 1200px;
+  			overflow: hidden;
+		}
+
+		
+		.demo > div:nth-child(odd) {
+  			background:lightgray;
+		}
+		.demo > div:nth-child(even) {
+  			background:black;
+		}
+		.demo > div:nth-child(2n+6) {
+  			background:lightgray;
+		}
+		.demo > div:nth-child(2n+7) {
+  			background:black;
+		}
+		.demo > div:nth-child(2n+13) {
+  			background:lightgray;
+		}
+		.demo > div:nth-child(2n+14) {
+  			background:black;
+		}
+		.demo > div:nth-child(2n+18) {
+  			background:lightgray;
+		}
+		.demo > div:nth-child(2n+19) {
+  			background:black;
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<audio src='GuitarSynth.wav'></audio>
+
+	<!--Play Button-->
+	<button data-playing="false" class="tape-controls-play" role="switch" aria-checked="false">
+    	<span>On/Off</span>
+	</button>
+
+	<!--Duty Slider-->
+	<input type="range" id="duty" class="control-volume" min="0.01" max="0.99" value="0.5" list="gain-vals" step="0.0001" data-action="volume" />
+	
+	<!--Wave Selector-->
+	<select id = wave>
+		<option value="sine">Sine</option>
+		<option value="pulse">Pulse</option>
+		<option value="saw">Saw</option>
+		<option value="triangle">Triangle</option>
+		<option value="guitar">Guitar</option>
+		<option value="mallet">Mallet</option>
+	</select>
+
+	<!--Keys-->
+	<div class="demo" id="wrapper" style="width:100%;">
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+  		<div style="width:4%;"></div>
+	</div>
+
+	<!--Filter Cutoff Slider-->
+	<input type="range" id="filtercutoff" class="control-cutoff" min="0" max="100" value="100" list="cutoff-vals" step="0.0001" data-action="cutoff" />
+	<!--Filter Q Slider-->
+	<input type="range" id="filterq" class="control-q" min="0.0001" max="50" value="0.0001" list="q-vals" step="0.0001" data-action="q" />
+
+	<!--Semitone Shift button-->
+	<button data-playing="false" class="shiftdown" role="switch" aria-checked="false"> <span><</span> </button>
+	<button data-playing="false" class="shiftup" role="switch" aria-checked="false"> <span>></span> </button>
+
+	<!--Octave Shift button-->
+	<button data-playing="false" class="oshiftdown" role="switch" aria-checked="false"> <span><<</span> </button>
+	<button data-playing="false" class="oshiftup" role="switch" aria-checked="false"> <span>>></span> </button>
+
+
+	<script type="text/javascript", src="ProducingTone.js">
+	</script>
+
+</body>
+
+</html>
